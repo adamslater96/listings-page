@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, current, PayloadAction } from "@reduxjs/toolkit";
 import { RootReducer } from "../index";
 
 interface State {
@@ -7,6 +7,7 @@ interface State {
     minPrice: number,
     maxPrice: number,
     sortBy: number,
+    color: number,
 }
 
 const initialState: State = {
@@ -15,6 +16,7 @@ const initialState: State = {
     minPrice: 0,
     maxPrice: 0,
     sortBy: 0,
+    color: 0,
 };
 
 const menuSlice = createSlice({
@@ -35,14 +37,18 @@ const menuSlice = createSlice({
         setSortBy: (state, action: PayloadAction<number>) => {
             state.sortBy = action.payload;
         },
+        setColor: (state, action: PayloadAction<number>) => {
+            state.color = action.payload
+        },
     },
     initialState,
 });
 
 export const menuReducer = menuSlice.reducer;
-export const { setIsActiveBurger, setMinPrice, setMaxPrice, setSortBy, setIsActiveCart } = menuSlice.actions;
+export const { setIsActiveBurger, setMinPrice, setMaxPrice, setSortBy, setIsActiveCart, setColor } = menuSlice.actions;
 export const selectBurger = ({ menuReducer: { menuIsActive } }: RootReducer) => menuIsActive;
 export const selectCart = ({ menuReducer: { cartIsActive } }: RootReducer) => cartIsActive;
 export const selectMinPrice = ({ menuReducer: { minPrice } }: RootReducer) => minPrice;
 export const selectMaxPrice = ({ menuReducer: { maxPrice } }: RootReducer) => maxPrice;
 export const selectSortBy = ({ menuReducer: { sortBy } }: RootReducer) => sortBy;
+export const selectColor = ({ menuReducer: { color } }: RootReducer) => color;

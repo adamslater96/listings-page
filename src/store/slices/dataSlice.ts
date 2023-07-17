@@ -21,6 +21,7 @@ const dataSlice = createSlice({
         setProducts: (state, action: PayloadAction<Array<Products>>) => {
             state.products = action.payload;
         }
+
     },
     initialState,
 });

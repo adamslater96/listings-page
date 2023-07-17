@@ -13,7 +13,7 @@ const Main: FC = () => {
     }
 
     return (
-    <div className="px-6 pt-[100px] pb-3 h-full overflow-auto bg-secondary">
+    <div className="px-6 pt-[150px]  md:pt-[100px] pb-3 h-full overflow-auto bg-secondary">
         <h2 className="text-center font-bold text-4xl">{capitilizeFirstLetter(searchTerm)}</h2>
         <div className="flex justify-center">
             <div className="flex justify-center gap-3 flex-wrap max-w-[1300px]">

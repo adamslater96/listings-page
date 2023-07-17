@@ -2,8 +2,17 @@ import { useTypeDispatch } from "../store";
 import { setFacets, setProducts } from "../store/slices/dataSlice"
 import { Data } from "../types/sliceTypes"
 
-const FetchData = async ({search, minPrice, maxPrice, sortBy}: any) => {
+interface Props {
+    search: string, 
+    minPrice: number, 
+    maxPrice: number, 
+    sortBy: number,
+    color: number,
+}
+
+const FetchData = async ({search, minPrice, maxPrice, sortBy, color}: Props) => {
     const dispatch = useTypeDispatch();
+    const colorArr = ["Black", "White", "Chrome", "Rose Gold"]
     try {
         const response = await fetch(
         "https://spanishinquisition.victorianplumbing.co.uk/interviews/listings?apikey=yj2bV48J40KsBpIMLvrZZ1j1KwxN4u3A83H8IBvI",
@@ -24,8 +33,16 @@ const FetchData = async ({search, minPrice, maxPrice, sortBy}: any) => {
                     "value": {
                         "gte": `${minPrice > 0 ? minPrice : ''}`,
                         "lte": `${maxPrice > 0 ? maxPrice : '' }`
-                        }
-                    }],
+                    }
+                }],
+                "colour": [{
+                    "value" : `${colorArr[color]}`
+                }],
+                
+                // "colour": [{
+                //     "identifier": "3F-CB-96-ED-6C-64-AB-3F",
+                //     "value" : "Black" ${color?.value} 
+                // }],
             }
             })
         }
@@ -36,7 +53,7 @@ const FetchData = async ({search, minPrice, maxPrice, sortBy}: any) => {
             dispatch(setFacets(data.facets))
         }
     } catch (error) {
-        //console.log(error)
+        console.log(error)
       }
     }
 

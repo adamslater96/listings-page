@@ -17,7 +17,7 @@ const Menu: FC = () => {
     const dispatch = useTypeDispatch();
 
     return (
-    <section className="pt-[130px] sm:pt-[90px] absolute top-0 right-0 w-full sm:w-1/2 h-full z-40 shadow-md border bg-white overflow-hidden" style={ isCartActive ? { display:'block'} : {display : 'none'} }>
+    <section className="pt-[150px] md:pt-[100px] absolute top-0 right-0 w-full sm:w-1/2 h-full z-40 shadow-md border bg-white overflow-hidden" style={ isCartActive ? { display:'block'} : {display : 'none'} }>
         <div className="flex justify-end items-center px-6">
             <span 
                 className="text-lg cursor-pointer"

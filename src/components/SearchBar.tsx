@@ -5,7 +5,12 @@ import {
     selectTerm, 
     setTerm,
 } from "../store/slices/searchSlice"
-import { selectMaxPrice, selectMinPrice, selectSortBy } from "../store/slices/menuSlice"
+import { 
+    selectColor,
+    selectMaxPrice, 
+    selectMinPrice, 
+    selectSortBy,
+} from "../store/slices/menuSlice"
 import fetchData from "../functions/api"
 
 const SearchBar = () => {
@@ -14,8 +19,9 @@ const SearchBar = () => {
     const minPrice = useSelector(selectMinPrice);
     const maxPrice = useSelector(selectMaxPrice);
     const sortBy = useSelector(selectSortBy);
+    const color = useSelector(selectColor);
     
-    fetchData({search, minPrice, maxPrice, sortBy})
+    fetchData({search, minPrice, maxPrice, sortBy, color})
 
     const searchOptions = [
         {
@@ -52,10 +58,10 @@ const SearchBar = () => {
     }
     useEffect(() => {
     
-    }, [search, minPrice, maxPrice, sortBy])
+    }, [search])
     return (
     <div className="flex items-center gap-4">
-        <h3 className="my-4 font-semibold">Search</h3>
+        <h3 className="my-4 font-semibold text-white">Search</h3>
         <select className="w-full border-2 rounded-md py-1 px-2 text-black" name="sort-by" id="sortBy" onChange={(event) => handleInputChange(event)}>
             {searchOptions.map((option, key) => (
                 <option key={key} value={option.value}>{option.label}</option>
