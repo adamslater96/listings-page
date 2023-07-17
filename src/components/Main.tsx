@@ -15,16 +15,18 @@ const Main: FC = () => {
     return (
     <div className="px-6 pt-[100px] pb-3 h-full overflow-auto bg-secondary">
         <h2 className="text-center font-bold text-4xl">{capitilizeFirstLetter(searchTerm)}</h2>
-        <div className="flex justify-center gap-3 flex-wrap">
-            {products.length > 0 ? 
-                products.map((prod, key) => {
-                    return <ProductCard prod={prod} key={key} />
-            })
-            :
-            <div className="flex justify-center items-center w-full">
-                <p className="w-[350px] text-3xl text-gray-300 p-2 text-center font-semibold">Search here for all your plumbing related needs!</p>
+        <div className="flex justify-center">
+            <div className="flex justify-center gap-3 flex-wrap max-w-[1300px]">
+                {products.length > 0 ? 
+                    products.map((prod, key) => {
+                        return <ProductCard prod={prod} key={key} />
+                })
+                :
+                <div className="flex justify-center items-center w-full">
+                    <p className="w-[350px] text-3xl text-gray-300 p-2 text-center font-semibold">Search here for all your plumbing related needs!</p>
+                </div>
+                }
             </div>
-            }
         </div>
     </div>
     );
