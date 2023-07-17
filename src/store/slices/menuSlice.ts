@@ -44,8 +44,13 @@ const menuSlice = createSlice({
     initialState,
 });
 
+//Slice Reducer
 export const menuReducer = menuSlice.reducer;
+
+//Actions
 export const { setIsActiveBurger, setMinPrice, setMaxPrice, setSortBy, setIsActiveCart, setColor } = menuSlice.actions;
+
+//Reducer properties
 export const selectBurger = ({ menuReducer: { menuIsActive } }: RootReducer) => menuIsActive;
 export const selectCart = ({ menuReducer: { cartIsActive } }: RootReducer) => cartIsActive;
 export const selectMinPrice = ({ menuReducer: { minPrice } }: RootReducer) => minPrice;

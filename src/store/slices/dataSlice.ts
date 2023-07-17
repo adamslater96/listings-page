@@ -26,7 +26,12 @@ const dataSlice = createSlice({
     initialState,
 });
 
+//Slice Reducer
 export const dataReducer = dataSlice.reducer;
+
+//Actions
 export const { setFacets, setProducts } = dataSlice.actions;
+
+//Reducer properties
 export const selectFacets = ({ dataReducer: { facets } }: RootReducer) => facets;
 export const selectProducts = ({ dataReducer: { products } }: RootReducer) => products;

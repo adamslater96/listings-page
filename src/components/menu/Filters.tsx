@@ -19,8 +19,9 @@ const Filters: FC = () => {
     const maxPrice = useSelector(selectMaxPrice);
     const dispatch = useTypeDispatch();
 
+    //Static search options
     const colorOptions = ["Black", "White", "Chrome", "Rose Gold"]
-
+    
     const sortOptions = [
         {
           label: "Recommended",

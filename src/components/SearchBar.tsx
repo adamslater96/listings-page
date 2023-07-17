@@ -23,6 +23,7 @@ const SearchBar = () => {
     
     fetchData({search, minPrice, maxPrice, sortBy, color})
 
+    //Static search options
     const searchOptions = [
         {
             label: "",
@@ -52,17 +53,13 @@ const SearchBar = () => {
             value: "tiles",
         },
     ];
-
-    const handleInputChange = (event: any) => { 
-        dispatch(setTerm(event.target.value))
-    }
     useEffect(() => {
     
     }, [search])
     return (
     <div className="flex items-center gap-4">
         <h3 className="my-4 font-semibold text-white">Search</h3>
-        <select className="w-full border-2 rounded-md py-1 px-2 text-black" name="sort-by" id="sortBy" onChange={(event) => handleInputChange(event)}>
+        <select className="w-full border-2 rounded-md py-1 px-2 text-black" name="sort-by" id="sortBy" onChange={(event) => dispatch(setTerm(event.target.value))}>
             {searchOptions.map((option, key) => (
                 <option key={key} value={option.value}>{option.label}</option>
             ))}

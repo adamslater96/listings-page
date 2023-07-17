@@ -32,7 +32,12 @@ const basketSlice = createSlice({
     initialState,
 });
 
+//Slice Reducer
 export const basketReducer = basketSlice.reducer;
+
+//Actions
 export const { setProducts, removeProducts } = basketSlice.actions;
+
+//Reducer properties
 export const selectProducts = ({ basketReducer: { products } }: RootReducer) => products;
 export const selectTotal = ({ basketReducer: { total } }: RootReducer) => total;
