@@ -12,6 +12,8 @@ import {
     setColor,
 } from "../../store/slices/menuSlice";
 import { useTypeDispatch } from "../../store"
+
+//POTENTIAL IMPROVEMENT: FILTER AND CART could be combined to being a single dynamic menu component
   
 const Filters: FC = () => {
     const isBurgerActive = useSelector(selectBurger);
@@ -19,9 +21,13 @@ const Filters: FC = () => {
     const maxPrice = useSelector(selectMaxPrice);
     const dispatch = useTypeDispatch();
 
-    //Static search options
+    //POTENTIAL IMPROVEMENT: If a way to fetchData was implemented in to the useEffect/onLoad of the App component, we could loop through each of the search lists we would like to fetch initially and have all data on hand. This would also make it easier to strongly type all data recieved, giving us a more accurate data model to work on top off.
+
+    //We could then replace the static color options with dynamic as they would have async loaded in time to then grab them here
+
     const colorOptions = ["Black", "White", "Chrome", "Rose Gold"]
     
+    //Sort options for the sort filter
     const sortOptions = [
         {
           label: "Recommended",
@@ -47,6 +53,7 @@ const Filters: FC = () => {
             <span 
                 className="text-lg cursor-pointer"
                 onClick={() => {
+                    //Resets both menus to no longer show
                     dispatch(setIsActiveBurger(false))
                     dispatch(setIsActiveCart(false))
                 }}
@@ -93,6 +100,8 @@ const Filters: FC = () => {
                 <select className="border-2 rounded-md py-1 mx-1 px-1" name="colour" id="colour" onChange={(event) => {
                     dispatch(setColor(Number(event.target.value)))
                 }}>
+
+                {/* Mapping through color options which do not need a population check as they are static values, if fetchData idea was implemented we would need to change this to perform a check before showing to customer  */}
                 {colorOptions.map((option: string, index: number) => (
                     <option key={index} value={index}>{option}</option>
                 ))}

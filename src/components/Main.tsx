@@ -4,6 +4,8 @@ import { selectProducts } from "../store/slices/dataSlice";
 import { selectTerm } from "../store/slices/searchSlice";
 import ProductCard from "./ProductCard";
 
+//MAIN DISPLAY PAGE FOR FETCHED DATA
+
 const Main: FC = () => {
     const products = useSelector(selectProducts);
     const searchTerm = useSelector(selectTerm)

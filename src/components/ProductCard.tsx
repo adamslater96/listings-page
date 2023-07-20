@@ -14,6 +14,8 @@ interface CurrentProd {
     id: string,
 };
 
+//POTENTIAL IMPROVEMENT: Given more time i think it would be ab extremely viable option to combine ProductCard.tsx and cartProductCard.ts to be a dynamic component that would work in both the cart and the main page.
+
 const ProductCard = ({prod}: any) => {
     const dispatch = useTypeDispatch();
 
@@ -45,6 +47,8 @@ const ProductCard = ({prod}: any) => {
                 <h3 className="text-sm leading-none mb-1 h-[40px] flex items-center">{prod?.productName}</h3>
                 <h2 className="text-lg font-bold leading-none mb-3">£{prod?.price.priceIncTax}</h2>  
 
+
+                {/* POTENTIAL IMPROVEMENT: adding a ternary statement for the button text context. If already in cart the word will read "Added (tick icon)" If not it would then default display "Add to cart" */}
                 <button className="py-2 px-4 bg-primary rounded-full text-white hover:scale-125 mb-3" onClick={() => {
                     arr = [currentProd]
                     dispatch(setProducts(...arr))

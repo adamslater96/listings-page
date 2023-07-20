@@ -19,11 +19,11 @@ const searchSlice = createSlice({
     initialState,
 });
 
-//Slice Reducer
+//Slice Reducer - to implement in to root reducer
 export const searchReducer = searchSlice.reducer;
 
-//Actions
+//Actions - to adjust reducer properties
 export const { setTerm } = searchSlice.actions;
 
-//Reducer properties
+//Reducer properties - to grab/reference properties
 export const selectTerm = ({ searchReducer: { searchTerm } }: RootReducer) => searchTerm;

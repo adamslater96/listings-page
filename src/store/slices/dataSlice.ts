@@ -26,12 +26,12 @@ const dataSlice = createSlice({
     initialState,
 });
 
-//Slice Reducer
+//Slice Reducer - to implement in to root reducer
 export const dataReducer = dataSlice.reducer;
 
-//Actions
+//Actions - to adjust reducer properties
 export const { setFacets, setProducts } = dataSlice.actions;
 
-//Reducer properties
+//Reducer properties - to grab/reference properties
 export const selectFacets = ({ dataReducer: { facets } }: RootReducer) => facets;
 export const selectProducts = ({ dataReducer: { products } }: RootReducer) => products;

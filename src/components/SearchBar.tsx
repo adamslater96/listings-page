@@ -13,6 +13,10 @@ import {
 } from "../store/slices/menuSlice"
 import fetchData from "../functions/api"
 
+//All search functionality and essential control for the app has been placed withing the search bar. This is why fetchData is called here. 
+
+//Previously commented idea about finding a way to implement fetchData in to the app component on load, then we can loop through all data at the start and access it through filtering easier. (Possibly a better layout for the project, an option id enjoy exploring). This would also make it easier to strongly type all data recieved, giving us a more accurate data model to work on top off.
+
 const SearchBar = () => {
     const dispatch = useTypeDispatch();
     let search = useSelector(selectTerm);

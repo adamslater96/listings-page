@@ -1,6 +1,8 @@
 import { FC } from "react";
 
 const Footer: FC = () => {
+    //POTENTIAL IMPROVEMENT: If more time available i would of liked to build out this section with dummy links etc. My plan was to copy the VP site 
+
     return (
     <footer className="hidden sm:block px-6 border-t-2 py-3 text-xxs sm:text-xs text-grey">
         <p>© 1999 - 2023</p>

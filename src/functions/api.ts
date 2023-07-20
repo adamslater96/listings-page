@@ -10,6 +10,8 @@ interface Props {
     color: number,
 }
 
+//POTENTIAL IMPROVEMENT: Change this to be a HOOK 
+
 const FetchData = async ({search, minPrice, maxPrice, sortBy, color}: Props) => {
     const dispatch = useTypeDispatch();
     const colorArr = ["Black", "White", "Chrome", "Rose Gold"]

@@ -18,7 +18,8 @@ const basketSlice = createSlice({
                 arr.push(currentState[i].payload.id)
             }
 
-            //Only add one time to cart
+            //Only add one time to cart, this is to make way for a further potential improvement.
+            //By adding once to the cart it ensures only one product card is added in total. From here we could capture the number of clicks which could then be used to total up a quantity of each product. 
             if(arr.includes(action.payload.id)){
                 return
             } else {
@@ -32,12 +33,12 @@ const basketSlice = createSlice({
     initialState,
 });
 
-//Slice Reducer
+//Slice Reducer - to implement in to root reducer
 export const basketReducer = basketSlice.reducer;
 
-//Actions
+//Actions - to adjust reducer properties
 export const { setProducts, removeProducts } = basketSlice.actions;
 
-//Reducer properties
+//Reducer properties - to grab/reference properties
 export const selectProducts = ({ basketReducer: { products } }: RootReducer) => products;
 export const selectTotal = ({ basketReducer: { total } }: RootReducer) => total;

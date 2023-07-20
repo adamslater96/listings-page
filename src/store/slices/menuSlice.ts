@@ -44,13 +44,13 @@ const menuSlice = createSlice({
     initialState,
 });
 
-//Slice Reducer
+//Slice Reducer - to implement in to root reducer
 export const menuReducer = menuSlice.reducer;
 
-//Actions
+//Actions - to adjust reducer properties
 export const { setIsActiveBurger, setMinPrice, setMaxPrice, setSortBy, setIsActiveCart, setColor } = menuSlice.actions;
 
-//Reducer properties
+//Reducer properties - to grab/reference properties
 export const selectBurger = ({ menuReducer: { menuIsActive } }: RootReducer) => menuIsActive;
 export const selectCart = ({ menuReducer: { cartIsActive } }: RootReducer) => cartIsActive;
 export const selectMinPrice = ({ menuReducer: { minPrice } }: RootReducer) => minPrice;

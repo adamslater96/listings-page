@@ -1,3 +1,6 @@
+/* IMPORTATION OF TAILWIND */
+
+/* My use of Tailwind was based on the choice that it would elimante a lot of type spent on styling so i could focus on the much more important side of the tech test, the funtionality. Secondly it is a joy to use! */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

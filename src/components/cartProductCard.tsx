@@ -27,6 +27,10 @@ const CartProductCard = ({product}: any) => {
                 }}>Remove</button>
             </div>
 
+
+            {/* POTENTIAL IMPROVEMENT: A good place here to implement functionality to pick up if a product is on sale from the fetch data.
+            
+            if this was the case then we could add dynamic functionality to display sale prices to customer */}
             <div className="flex justify-end">
                 {product?.status === 'G' ? 
                     <div className="flex gap-2 items-center">

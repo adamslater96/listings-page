@@ -22,6 +22,7 @@ const Menu: FC = () => {
             <span 
                 className="text-lg cursor-pointer"
                 onClick={() => {
+                    //Resets both menus to no longer show
                     dispatch(setIsActiveBurger(false))
                     dispatch(setIsActiveCart(false))
                 }}
@@ -32,6 +33,8 @@ const Menu: FC = () => {
         <h2 className="text-lg text-center text-gray-600 mb-6 font-bold">Cart</h2>
 
         <div className="px-6 pb-3 overflow-scroll h-4/5 flex justify-center gap-3 flex-wrap">
+
+            {/* Ensuring products populate before mapping and showing them to the user. Also showing them default message if no population */}
             {cartProducts.length > 0 ? 
                 (
                     cartProducts.map((prod: any, key: number) => {
