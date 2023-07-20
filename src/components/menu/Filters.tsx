@@ -14,6 +14,8 @@ import {
 import { useTypeDispatch } from "../../store"
 
 //POTENTIAL IMPROVEMENT: FILTER AND CART could be combined to being a single dynamic menu component
+
+//Also adding a counter function similar to the Cart, this would be to show the user how many current filters they have applied to there search
   
 const Filters: FC = () => {
     const isBurgerActive = useSelector(selectBurger);

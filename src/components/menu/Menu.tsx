@@ -8,6 +8,8 @@ import {
 import Cart from "./Cart";
 
 //If both filters and cart components were combined then logic here could potentially be simplified
+
+//POTENTIAL IMPROVEMENT: adding in a total price by looping through the active pricing on each item in the cart
   
 const Menu: FC = () => {
     const isCartActive = useSelector(selectCart);
