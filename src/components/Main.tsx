@@ -6,6 +6,8 @@ import ProductCard from "./ProductCard";
 
 //MAIN DISPLAY PAGE FOR FETCHED DATA
 
+//POTENTIAL IMPROVEMENT: Add in a loading spinner somewhere for the second or two that the products are populating on to the screen. This will imporve the UI and stop the user seeing clunky loading of products and images. 
+
 const Main: FC = () => {
     const products = useSelector(selectProducts);
     const searchTerm = useSelector(selectTerm)
